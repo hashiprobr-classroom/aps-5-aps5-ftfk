@@ -7,13 +7,14 @@ public class Data extends Referencia{
     private int ano;
     private int mes;
     private int dia;
-    private Map<Integer,Integer> limites = new HashMap<>();
+    private Map<Integer,Integer> limites;
 
     public Data(String observacao){
         super(observacao);
         this.ano = 1970;
         this.mes = 1;
         this.dia = 1;
+        limites = new HashMap<>();
         limites.put(1, 31);
         limites.put(2, 28);
         limites.put(3, 31);
