@@ -4,8 +4,8 @@ public class DataTempo extends Referencia{
     private Data data;
     private Tempo tempo;
 
-    public DataTempo(Data data,Tempo tempo,String observacao){
-        super(observacao);
+    public DataTempo(Data data,Tempo tempo){
+        super();
         this.data = data;
         this.tempo = tempo;
     }

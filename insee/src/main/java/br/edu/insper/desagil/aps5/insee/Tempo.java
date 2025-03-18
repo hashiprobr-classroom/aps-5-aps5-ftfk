@@ -4,8 +4,8 @@ public class Tempo extends Referencia{
     private int hora;
     private int minuto;
 
-    public Tempo(String observacao){
-        super(observacao);
+    public Tempo(){
+        super();
         this.hora = 0;
         this.minuto = 0;
     }

@@ -9,8 +9,8 @@ public class Data extends Referencia{
     private int dia;
     private Map<Integer,Integer> limites;
 
-    public Data(String observacao){
-        super(observacao);
+    public Data(){
+        super();
         this.ano = 1970;
         this.mes = 1;
         this.dia = 1;
@@ -37,17 +37,25 @@ public class Data extends Referencia{
 
     public void atualiza(int ano,int mes, int dia){
         if (ano < 1970){
-            ano = 1;
+            this.ano = 1970;
+        } else {
+            this.ano = ano;
         }
         if (mes < 1) {
+            this.mes = 1;
             mes = 1;
         } else if (mes > 12){
+            this.mes = 12;
             mes = 12;
+        } else {
+            this.mes = mes;
         }
         if (dia < 1){
-            dia = 1;
+            this.dia = 1;
         }else if (dia > limites.get(mes)){
-            dia = limites.get(mes);
+            this.dia = limites.get(mes);
+        } else {
+            this.dia = dia;
         }
     }
 
