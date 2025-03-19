@@ -43,17 +43,16 @@ public class Data extends Referencia{
         }
         if (mes < 1) {
             this.mes = 1;
-            mes = 1;
         } else if (mes > 12){
             this.mes = 12;
-            mes = 12;
         } else {
             this.mes = mes;
         }
+        int lim = limites.get(this.mes);
         if (dia < 1){
             this.dia = 1;
-        }else if (dia > limites.get(mes)){
-            this.dia = limites.get(mes);
+        }else if (dia > lim){
+            this.dia = lim;
         } else {
             this.dia = dia;
         }
