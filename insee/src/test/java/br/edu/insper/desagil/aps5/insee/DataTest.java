@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DataTest {
     private Data d;
-    private static final double DELTA = 0.000001;
 
     @BeforeEach
     void setUp(){
