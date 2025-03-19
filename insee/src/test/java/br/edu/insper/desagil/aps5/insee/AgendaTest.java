@@ -3,7 +3,10 @@ package br.edu.insper.desagil.aps5.insee;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AgendaTest {
     private Agenda a;
@@ -31,8 +34,11 @@ public class AgendaTest {
         DataTempo dti = new DataTempo(di,ti);
         DataTempo dtf = new DataTempo(df,tf);
         Evento e = new Evento(dti,dtf);
+        List<Evento> l = new ArrayList<>();
+        l.add(e);
         a.adiciona(e);
-        
+        boolean condicao = l.equals(a.getEventos());
+        assertTrue(condicao);
     }
 
     @Test
@@ -48,6 +54,11 @@ public class AgendaTest {
         DataTempo dti = new DataTempo(di,ti);
         DataTempo dtf = new DataTempo(df,tf);
         Evento e = new Evento(dtf,dti);
-        a.adiciona(e);
+
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            a.adiciona(e);
+        });
+
+        assertEquals("Evento inválido!", exception.getMessage());
     }
 }
