@@ -1,7 +1,5 @@
 package br.edu.insper.desagil.aps5.insee;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +12,7 @@ public class Agenda {
 
     public List<Evento> getEventos() {return eventos;}
 
-    public void adicion(Evento evento){
+    public void adiciona(Evento evento){
         if (evento.valido()){
             eventos.add(evento);
         } else {
