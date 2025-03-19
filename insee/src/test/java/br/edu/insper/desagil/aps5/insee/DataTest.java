@@ -44,4 +44,15 @@ public class DataTest {
         assertEquals(9,d.getMes());
         assertEquals(2024,d.getAno());
     }
+
+    @Test
+    void comoZero(){
+        assertEquals(0,d.comoInteiro());
+    }
+
+    @Test
+    void comoAgora(){
+        d.atualiza(2024,9,26);
+        assertEquals(19978,d.comoInteiro());
+    }
 }
